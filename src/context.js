@@ -5,20 +5,23 @@ const AppContext = React.createContext();
 
 export const AppProvider = ({ children }) => {
   const { MonitorType, Legends, Monitor } = data;
-
   const defaultMonitorTypeId = MonitorType[0].Id;
+  const defaultLegendId = MonitorType[0].LegendId;
+  const defaultMonitorName = Monitor[0].Name;
+
   const [monitorTypeId, setMonitorTypeId] = useState(defaultMonitorTypeId);
   const [isShowMenu, setIsShowMenu] = useState(false);
+  const [legendId, setLegendId] = useState(defaultLegendId);
+  const [monitorName, setMonitorName] = useState(defaultMonitorName);
 
   const handleMainMenuClick = (e) => {
-    getSubMenuItems(e.target.value);
     setMonitorTypeId(parseInt(e.target.value));
     setIsShowMenu(true);
   };
 
-  const getSubMenuItems = (monitorTypeId) => {
-    monitorTypeId = parseInt(monitorTypeId);
-    return Monitor.filter((monitor) => monitor.MonitorTypeId === monitorTypeId);
+  const handleSubMenuClick = (e) => {
+    setMonitorName(e.target.name);
+    setLegendId(data.MonitorType[monitorTypeId].LegendId);
   };
 
   return (
@@ -29,7 +32,10 @@ export const AppProvider = ({ children }) => {
         Monitor,
         monitorTypeId,
         isShowMenu,
+        legendId,
+        monitorName,
         handleMainMenuClick,
+        handleSubMenuClick,
       }}
     >
       {children}

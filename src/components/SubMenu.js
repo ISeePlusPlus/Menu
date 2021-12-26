@@ -6,12 +6,9 @@ const SubMenu = () => {
 
   return (
     <ul>
-      <h3>
-        {Monitor.filter(
-          (monitor) => monitor.MonitorTypeId === monitorTypeId
-        ).map((item, itemIndex) => {
+      {Monitor.filter((monitor) => monitor.MonitorTypeId === monitorTypeId).map(
+        (item, itemIndex) => {
           const { Id, Name, Desc, MonitorTypeId } = item;
-          console.log(item);
           return (
             <li key={itemIndex}>
               <button
@@ -23,8 +20,8 @@ const SubMenu = () => {
               </button>
             </li>
           );
-        })}
-      </h3>
+        }
+      )}
     </ul>
   );
 };

@@ -11,13 +11,11 @@ const MainMenuContainer = () => {
         {MonitorType.map((menuitem, menuindex) => {
           const { Id, Name, LegendId, description } = menuitem;
           return (
-            <button
-              key={menuindex}
-              onClick={(e) => handleMainMenuClick(e)}
-              value={Id}
-            >
-              {Name}
-            </button>
+            <li key={menuindex}>
+              <button onClick={(e) => handleMainMenuClick(e)} value={Id}>
+                {Name}
+              </button>
+            </li>
           );
         })}
       </ul>

@@ -1,7 +1,7 @@
 import React from "react";
 
-const LegendContainer = () => {
-  return <div>TestLegendContainer</div>;
+const LegendContainer = ({ legendContent, monitorTypeId }) => {
+  return <article>testLegend</article>;
 };
 
 export default LegendContainer;

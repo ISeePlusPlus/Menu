@@ -1,18 +1,22 @@
 import React from "react";
+import { useGlobalContext } from "../context";
 
 //This contains the monitorTypes main menu
-const MainMenuContainer = ({ menuItems }) => {
+const MainMenuContainer = () => {
+  const { MonitorType, handleMainMenuClick } = useGlobalContext();
+
   return (
     <nav className='main-nav'>
       <ul className='nav-btns'>
-        {menuItems.map((menuitem, menuindex) => {
+        {MonitorType.map((menuitem, menuindex) => {
           const { Id, Name, LegendId, description } = menuitem;
           return (
             <button
               key={menuindex}
-              onClick={() => console.log(Name, "button working")}
+              onClick={(e) => handleMainMenuClick(e)}
+              value={Id}
             >
-              {description}
+              {Name}
             </button>
           );
         })}

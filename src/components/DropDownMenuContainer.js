@@ -5,11 +5,7 @@ import SubMenu from "./SubMenu";
 const DropDownMenuContainer = () => {
   const { isShowMenu } = useGlobalContext();
 
-  return (
-    <aside>
-      <div className='submenu'>{isShowMenu && <SubMenu />}</div>
-    </aside>
-  );
+  return <div className='submenu'>{isShowMenu && <SubMenu />}</div>;
 };
 
 export default DropDownMenuContainer;

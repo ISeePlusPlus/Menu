@@ -13,15 +13,29 @@ export const AppProvider = ({ children }) => {
   const [isShowMenu, setIsShowMenu] = useState(false);
   const [legendId, setLegendId] = useState(defaultLegendId);
   const [monitorName, setMonitorName] = useState(defaultMonitorName);
+  const [coordinates, setCoordinates] = useState({});
 
-  const handleMainMenuClick = (e) => {
-    setMonitorTypeId(parseInt(e.target.value));
-    setIsShowMenu(true);
+  const handleMainMenuClick = (e, left, right, bottom) => {
+    if (!isShowMenu || monitorTypeId !== parseInt(e.target.value)) {
+      setMonitorTypeId(parseInt(e.target.value));
+      setCoordinates({ left, right, bottom });
+      setIsShowMenu(true);
+    } else {
+      closeSubmenu();
+    }
   };
 
   const handleSubMenuClick = (e) => {
     setMonitorName(e.target.name);
     setLegendId(data.MonitorType[monitorTypeId].LegendId);
+    const currentMonitorType = MonitorType.find(
+      (monitorType) => monitorType.Id === monitorTypeId
+    );
+    closeSubmenu();
+  };
+
+  const closeSubmenu = () => {
+    setIsShowMenu(false);
   };
 
   return (
@@ -36,6 +50,7 @@ export const AppProvider = ({ children }) => {
         monitorName,
         handleMainMenuClick,
         handleSubMenuClick,
+        coordinates,
       }}
     >
       {children}

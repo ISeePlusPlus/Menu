@@ -7,17 +7,22 @@ const LegendContainer = () => {
 
   return (
     <article className='legend-container'>
-      <div className='legend-header'>
-        <h3>{monitorName}</h3>
-      </div>
+      <h3>{monitorName}</h3>
       <div className='legend-main-section'>
         <ul>
           {legend.tags.map((tag, tagIndex) => {
             return (
               <li key={tagIndex}>
-                <div className='legend-item'>
-                  <span>{tag.Color}</span>
-                  <span>{tag.Label}</span>;)
+                <div className='legend-items'>
+                  <div>
+                    <span
+                      style={{ background: tag.Color }}
+                      className='color-box'
+                    >
+                      &nbsp;
+                    </span>
+                    <span line-height='1em'> {tag.Label}</span>
+                  </div>
                 </div>
               </li>
             );

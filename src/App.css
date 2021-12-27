@@ -1,38 +1,136 @@
-.App {
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #fef4f4;
+  color: #000;
+  width: 100vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style-type: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul li,
+li {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+}
+
+.main-nav {
+  height: 3rem;
+  display: flex;
+}
+
+.nav-btns {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+}
+.nav-btn {
+  display: block;
+  width: 100%;
+  background-color: #2980b9;
+  color: #fff;
+  border: 2px double #cccccc;
+  margin: 2px 1px;
+  padding: 0.5em 0.75em;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.legend-container {
+  margin: 1vw 0;
+  display: grid;
+  padding: 10px 0px;
+  width: 40vw;
+  height: auto;
+  border: 3px solid black;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.legend-main-section {
+  display: grid;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1em;
+}
+
+.color-box {
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  display: inline-block;
+}
+
+.submenu {
+  margin: 0 0;
+  top: -45px;
+  position: relative;
+}
+
+.submenu-content {
+  width: inherit;
+  background-color: white;
+  width: inherit;
+  display: block;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+@media screen and (min-width: 1400px) {
+  .legend-container {
+    font-size: 2.5em;
   }
-  to {
-    transform: rotate(360deg);
+
+  .legend-main-section {
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .legend-container {
+    padding: 20px 0px;
+    font-size: 1.75em;
+  }
+  .legend-main-section {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .legend-container {
+    font-size: 1.5em;
+  }
+  .legend-main-section {
+    font-size: 1.25em;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .legend-container {
+    font-size: 1.25em;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .legend-container {
+    font-size: 1.1em;
   }
 }

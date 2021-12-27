@@ -17,6 +17,18 @@
       "Name": "Meteorology",
       "LegendId": 1,
       "description": "Meteorology"
+    },
+    {
+      "Id": 3,
+      "Name": "Random1",
+      "LegendId": 2,
+      "description": "Meteorology"
+    },
+    {
+      "Id": 4,
+      "Name": "Random2",
+      "LegendId": 2,
+      "description": "Meteorology"
     }
   ],
   "Legends": [
@@ -65,6 +77,27 @@
           "Color": "#C0C0C0"
         }
       ]
+    },
+    {
+      "Id": 2,
+      "tags": [
+        {
+          "Label": "GOOD",
+          "Color": "#00E400"
+        },
+        {
+          "Label": "MODERATE",
+          "Color": "#FFFF00"
+        },
+        {
+          "Label": "UNHEALTHY FOR SENSITIVE GROUPS",
+          "Color": "#FF7E00"
+        },
+        {
+          "Label": "UNHEALTHY",
+          "Color": "#FF0000"
+        }
+      ]
     }
   ],
   "Monitor": [
@@ -78,13 +111,13 @@
       "Id": 22,
       "Name": "PM10",
       "Desc": "",
-      "MonitorTypeId": 0
+      "MonitorTypeId": 3
     },
     {
       "Id": 21,
       "Name": "PM2.5",
       "Desc": "",
-      "MonitorTypeId": 0
+      "MonitorTypeId": 3
     },
     {
       "Id": 4,
@@ -126,7 +159,7 @@
       "Id": 1,
       "Name": "NO2",
       "Desc": "",
-      "MonitorTypeId": 1
+      "MonitorTypeId": 4
     },
     {
       "Id": 15,
@@ -144,7 +177,7 @@
       "Id": 36,
       "Name": "BP",
       "Desc": "Pressure",
-      "MonitorTypeId": 2
+      "MonitorTypeId": 4
     },
     {
       "Id": 19,
@@ -156,7 +189,7 @@
       "Id": 20,
       "Name": "Wind Direction",
       "Desc": "Wind Dir S",
-      "MonitorTypeId": 2
+      "MonitorTypeId": 4
     }
   ]
 }

@@ -27,10 +27,11 @@ export const AppProvider = ({ children }) => {
 
   const handleSubMenuClick = (e) => {
     setMonitorName(e.target.name);
-    setLegendId(data.MonitorType[monitorTypeId].LegendId);
+    //setLegendId(data.MonitorType[monitorTypeId].LegendId);
     const currentMonitorType = MonitorType.find(
       (monitorType) => monitorType.Id === monitorTypeId
     );
+    setLegendId(currentMonitorType.LegendId);
     closeSubmenu();
   };
 
